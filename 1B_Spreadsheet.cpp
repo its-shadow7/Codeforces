@@ -1,8 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
- 
+ 
 #pragma GCC optimize ("O2")
- 
+ 
 #define ll long long
 #define int long long
 #define nn '\n'
@@ -12,16 +12,16 @@ using namespace std;
 #define read(v) for(auto &x : v) cin >> x
 #define show(v) for(auto &x : v) cout << x << " " 
 #define pb push_back
- 
+ 
 const int mod = 1e9+7;
- 
+ 
 bool testcases = 1;
- 
+ 
 void solve(){
     string s;
     cin >> s;
     string ans = "";
- 
+ 
     if (s[0]=='R' && isdigit(s[1]) and s.find('C')!=-1){
         int i =1;
         string temp="";
@@ -32,20 +32,20 @@ void solve(){
         }
     
         i++;
- 
+ 
         int val =0;
         while(i<s.length()){
             val*=10;
             val+=s[i++]-'0';
         }
- 
+ 
         while(val>0){
             val--;
             ans = char(val%26 + 'A') + ans;
             val/=26;
         }
         
- 
+ 
         ans = ans + temp;
     }
     else{
@@ -57,18 +57,18 @@ void solve(){
             val+=s[i]-'A'+1;
             i++;
         }
- 
+ 
         while(i<s.length()){
             ans+=s[i++];
         }
- 
+ 
         ans += 'C';
         ans += to_string(val);
     }
- 
+ 
     cout<< ans<< nn;
 }
- 
+ 
 int32_t main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
