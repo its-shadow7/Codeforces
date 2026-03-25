@@ -1,0 +1,53 @@
+#include <bits/stdc++.h>
+using namespace std;
+ 
+#pragma GCC optimize ("O2")
+ 
+#define ll long long
+#define int long long
+#define nn '\n'
+#define vi vector<int>
+#define vii vector<vector<int>>
+#define all(x) x.begin(), x.end()
+#define read(v) for(auto &x : v) cin >> x
+#define show(v) for(auto &x : v) cout << x << " " 
+#define pb push_back
+ 
+const int mod = 1e9+7;
+ 
+int lcm(int a,int b){
+    return (a/__gcd(a,b))*b;
+}
+ 
+bool testcases = 1;
+ 
+void solve(){
+    int n;
+    cin >> n;
+    int odd = (n+1)/2;
+    int even = n-odd;
+    int ans = (odd * 2) % mod;
+    int six = n/6;
+    ans = (ans + (even * 3) % mod) % mod;
+    ans += six;
+    int val = 2*3;
+    int i = 4;
+ 
+    while (val<=n){
+        val = lcm(val,i);
+        ans = (ans + n/val)%mod;
+        i++;
+    }
+    cout << ans << nn; 
+}
+ 
+int32_t main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int test = 1;
+    if(testcases) cin >> test;
+    while(test--){
+        solve();
+    }
+    return 0;
+}
