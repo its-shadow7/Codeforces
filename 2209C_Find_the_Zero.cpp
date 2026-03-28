@@ -34,7 +34,7 @@ void solve(){
     cin >> n;
     if (n==1){ cout << "! 1" <<nn; return;}
     cout << "! 2" << nn;
-    cout.flush();
+    // cout.flush();
 }
  
 int32_t main() {
